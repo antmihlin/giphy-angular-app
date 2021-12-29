@@ -37,6 +37,11 @@
       "files": ["*.html"],
       "extends": ["plugin:@angular-eslint/template/recommended"],
       "rules": {}
+    },
+    {
+      "files": ["*.scss"],
+      "extends": ["plugin:@angular-eslint/template/recommended"],
+      "rules": {}
     }
   ]
 }
