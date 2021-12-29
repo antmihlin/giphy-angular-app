@@ -4,10 +4,17 @@ import { DefaultContainerComponent } from './default-container/default-container
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { MatIconModule } from '@angular/material/icon';
 import { MatToolbarModule } from '@angular/material/toolbar';
+import { RouterModule } from '@angular/router';
 
 @NgModule({
   declarations: [DefaultContainerComponent],
   exports: [DefaultContainerComponent],
-  imports: [CommonModule, FlexLayoutModule, MatIconModule, MatToolbarModule],
+  imports: [
+    CommonModule,
+    FlexLayoutModule,
+    MatIconModule,
+    MatToolbarModule,
+    RouterModule,
+  ],
 })
 export class DefaultContainerModule {}

@@ -1,0 +1,53 @@
+@import "~@angular/material/theming";
+
+@include mat-core();
+
+$main-theme-primary: mat-palette($mat-grey, 200);
+$main-theme-secondary: mat-palette($mat-grey, 400);
+$main-theme-accent: mat-palette($mat-light-green, 500);
+$main-theme-warn: mat-palette($mat-red);
+
+$colorPrimary: mat-color($main-theme-primary);
+$colorSecondary: mat-color($main-theme-secondary);
+$colorAccent: mat-color($main-theme-accent);
+$colorWarn: mat-color($main-theme-warn);
+$colorAccentLight: mat-color($main-theme-accent, 200);
+
+.primaryColorBG {
+  background-color: $colorPrimary;
+}
+.secondaryColorBG {
+  background-color: $colorSecondary;
+}
+.accentColorBG {
+  background-color: $colorAccent;
+}
+.accentLightColorBG {
+  background-color: $colorAccentLight;
+}
+.warnColorBG {
+  background-color: $colorWarn;
+}
+
+.primaryColor {
+  color: $colorPrimary;
+}
+.secondaryColor {
+  color: $colorSecondary;
+}
+.accentColor {
+  color: $colorAccent;
+}
+.warnColor {
+  color: $colorWarn;
+}
+
+.primaryColorBorder {
+  border-color: $colorPrimary !important;
+}
+.accentColorBorder {
+  border-color: $colorSecondary !important;
+}
+.warnColorBorder {
+  border-color: $colorWarn !important;
+}

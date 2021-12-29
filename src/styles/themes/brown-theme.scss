@@ -1,0 +1,73 @@
+// Brown theme
+.brown-theme {
+  color: $light-primary-text;
+  $brown-primary: mat-palette($mat-brown, 100);
+  $brown-secondary: mat-palette($mat-brown, 200);
+  $brown-accent: mat-palette($mat-deep-orange, 400);
+  $brown-warn: mat-palette($mat-red);
+  $brown-theme: mat-light-theme($brown-primary, $brown-accent, $brown-warn);
+
+  $background: mat-color($mat-brown, 50);
+
+  $custom-background-color: map_get($mat-brown, 50);
+
+  $background: map-get($brown-theme, background);
+  $background: map_merge(
+    $background,
+    (
+      background: $custom-background-color,
+    )
+  );
+  $brown-theme: map_merge(
+    $brown-theme,
+    (
+      background: $background,
+    )
+  );
+  @include angular-material-theme($brown-theme);
+
+  $colorPrimary: mat-color($brown-primary);
+  $colorSecondary: mat-color($brown-secondary);
+  $colorAccent: mat-color($brown-accent);
+  $colorWarn: mat-color($brown-warn);
+  $colorAccentLight: mat-color($brown-accent, 200);
+
+  .primaryColorBG {
+    background-color: $colorPrimary;
+  }
+  .secondaryColorBG {
+    background-color: $colorSecondary;
+  }
+  .accentColorBG {
+    background-color: $colorAccent;
+  }
+  .accentLightColorBG {
+    background-color: $colorAccentLight;
+  }
+  .warnColorBG {
+    background-color: $colorWarn;
+  }
+
+  .primaryColor {
+    color: $colorPrimary;
+  }
+  .secondaryColor {
+    color: $colorSecondary;
+  }
+  .accentColor {
+    color: $colorAccent;
+  }
+  .warnColor {
+    color: $colorWarn;
+  }
+
+  .primaryColorBorder {
+    border-color: $colorPrimary !important;
+  }
+  .accentColorBorder {
+    border-color: $colorSecondary !important;
+  }
+  .warnColorBorder {
+    border-color: $colorWarn !important;
+  }
+}

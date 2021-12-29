@@ -1,7 +1,13 @@
-<mat-toolbar>
-  <a href="/">
-    <mat-icon>air</mat-icon>
-    <span>Anton M.</span>
+<mat-toolbar class="default-toolbar" color="primary">
+  <a
+    class="default-logo"
+    [routerLink]="['/']"
+    routerLinkActive="router-link-active"
+    fxLayout="row"
+    fxLayoutAlign="space-between center"
+  >
+    <mat-icon class="accentColor">air</mat-icon>
+    <span class="accentColor"> Anton M.</span>
   </a>
 </mat-toolbar>
 
