@@ -1,6 +1,11 @@
 .image-list__item {
   padding: 10px 0;
+
+  width: 100%;
   img {
     max-width: 100%;
+  }
+  .mat-card {
+    height: 220px;
   }
 }

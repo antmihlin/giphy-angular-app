@@ -1,7 +1,9 @@
 <div *ngIf="image" class="image-list__item">
-  <img
-    *ngIf="image?.images?.fixed_height?.url"
-    [src]="image?.images?.fixed_height?.url"
-    [alt]="image.title"
-  />
+  <mat-card fxLayout="column" fxLayoutAlign="center">
+    <img
+      *ngIf="image?.images?.fixed_height?.url"
+      [src]="image?.images?.fixed_height?.url"
+      [alt]="image.title"
+    />
+  </mat-card>
 </div>
