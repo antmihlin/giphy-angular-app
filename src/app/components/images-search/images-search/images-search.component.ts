@@ -11,8 +11,8 @@ export class ImagesSearchComponent {
   @Output() search = new EventEmitter<Set<string>>();
   constructor() {}
 
-  keywords = new Set(['example tag']);
-  formControl = new FormControl(['example tag']);
+  keywords = new Set(['cat']);
+  formControl = new FormControl(['cat']);
 
   addKeywordFromInput(event: MatChipInputEvent) {
     if (event.value) {

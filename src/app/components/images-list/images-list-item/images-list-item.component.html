@@ -1,3 +1,7 @@
 <div *ngIf="image" class="image-list__item">
-  <img src="https://via.placeholder.com/600x600.png" />
+  <img
+    *ngIf="image?.images?.downsized?.url"
+    [src]="image?.images?.downsized?.url"
+    [alt]="image.title"
+  />
 </div>

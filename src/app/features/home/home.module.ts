@@ -7,6 +7,7 @@ import { HomeRoutingModule } from './home-routing.module';
 import { HomeComponent } from './home/home.component';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { ImagesListModule } from 'src/app/components/images-list/images-list.module';
+import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 
 @NgModule({
   declarations: [HomeComponent],
@@ -17,6 +18,7 @@ import { ImagesListModule } from 'src/app/components/images-list/images-list.mod
     FlexLayoutModule,
     ImagesListModule,
     ImagesSearchModule,
+    MatProgressSpinnerModule,
   ],
 })
 export class HomeModule {}

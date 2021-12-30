@@ -1,6 +1,13 @@
 <app-default-container>
   <div fxLayout="column" fxLayoutAlign="stretch">
     <app-images-search (search)="onSearch($event)"></app-images-search>
-    <app-images-list [images]="images"></app-images-list>
+    <app-images-list *ngIf="!loading" [images]="images"></app-images-list>
+    <mat-progress-spinner
+      *ngIf="loading"
+      [color]="'primary'"
+      [mode]="'indeterminate'"
+      [value]="'50'"
+    >
+    </mat-progress-spinner>
   </div>
 </app-default-container>
