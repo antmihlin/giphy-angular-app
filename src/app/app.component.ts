@@ -7,5 +7,5 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'giphy-angular-app';
-  selectedTheme: string = 'dark-theme';
+  selectedTheme: string = 'dark-theme'; //dark-theme
 }
