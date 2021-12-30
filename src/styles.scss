@@ -2,6 +2,7 @@
 
 @import "../node_modules/@mdi/font/scss/materialdesignicons";
 @import "./styles/themes/themes";
+@import "~normalize.css";
 
 html,
 body {
@@ -10,6 +11,10 @@ body {
 body {
   margin: 0;
   font-family: Roboto, "Helvetica Neue", sans-serif;
+}
+button {
+  border: none;
+  background: none;
 }
 
 .page-content {
