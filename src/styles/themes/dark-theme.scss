@@ -1,12 +1,8 @@
 // dark theme
-.dark-theme .mat-app-background,
-.dark-theme.mat-app-background {
-  color: mat-color($mat-grey, 200) !important;
-}
 .dark-theme {
   color: mat-color($mat-grey, 100);
   $dark-primary: mat-palette($mat-grey, A700);
-  $dark-secondary: mat-palette($mat-grey, 600);
+  $dark-secondary: mat-palette($mat-grey, 100);
   $dark-accent: mat-palette($mat-light-green, 500);
   $dark-warn: mat-palette($mat-red);
   $dark-theme: mat-dark-theme($dark-primary, $dark-accent, $dark-warn);
@@ -32,8 +28,6 @@
   // You can put any color here. I've chosen mat-color($my-app-primary, 700)
   $my-foreground: dark-foreground(mat-color($dark-primary, 500));
 
-  //--------------------------
-
   $my-app-theme-custom: map-merge(
     $dark-theme,
     (
@@ -41,15 +35,7 @@
     )
   );
 
-  // ---------------------------
-
-  // @include angular-material-theme($dark-);
   @include angular-material-theme($my-app-theme-custom);
-
-  .customCard,
-  .fanfics {
-    box-shadow: -1px 1px 2px 1px #1d1d1d !important;
-  }
 
   $colorPrimary: mat-color($dark-primary);
   $colorSecondary: mat-color($dark-secondary);
