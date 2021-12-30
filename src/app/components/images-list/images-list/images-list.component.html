@@ -1,0 +1,23 @@
+<div
+  *ngIf="images"
+  class="image-list"
+  fxLayout="row wrap"
+  fxLayoutAlign="space-between center"
+>
+  <ng-container *ngIf="images.length > 0">
+    <app-images-list-item
+      fxFlex.xs="100"
+      fxFlex.gt-xs="32"
+      fxLayout="row"
+      fxLayoutAlign="center"
+      *ngFor="let image of images"
+      [image]="image"
+    ></app-images-list-item>
+  </ng-container>
+  <ng-container *ngIf="images.length === 0">
+    <h3>No images found</h3>
+  </ng-container>
+</div>
+<ng-container *ngIf="!images">
+  <h3>No images</h3>
+</ng-container>
