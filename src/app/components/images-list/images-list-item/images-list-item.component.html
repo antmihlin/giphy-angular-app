@@ -1,5 +1,5 @@
 <div *ngIf="image" class="image-list__item">
-  <mat-card fxLayout="column" fxLayoutAlign="center">
+  <mat-card fxLayout="row" fxLayoutAlign="center">
     <img
       *ngIf="image?.images?.fixed_height?.url"
       [src]="image?.images?.fixed_height?.url"

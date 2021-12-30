@@ -9,7 +9,7 @@ import { GiphyQuery } from 'src/app/models/giphyQuery';
   providedIn: 'root',
 })
 export class GiphyService {
-  httpOptions = {
+  private httpOptions = {
     headers: new HttpHeaders({
       'Content-Type': 'application/json',
       'Access-Control-Allow-Origin': '*',
@@ -29,7 +29,7 @@ export class GiphyService {
     };
   }
 
-  search(q: GiphyQuery): Observable<any[]> {
+  public search(q: GiphyQuery): Observable<any[]> {
     const url = GIHPY_API + 'search';
 
     const params = new HttpParams()
@@ -38,9 +38,6 @@ export class GiphyService {
       .set('offset', q.offset)
       .set('limit', q.limit);
 
-    // if (query) {this.httpOptions.params = new HttpParams({fromObject: query}); }
-
-    // return this.http.get<any>(url, this.httpOptions).pipe(
     return this.http.get<any>(url, { params }).pipe(
       tap((_) => console.log(`fetched items`)),
       catchError(this.handleError<any>(`getItems`))
