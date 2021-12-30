@@ -1,14 +1,3 @@
 <app-default-container>
-  <div class="image-list" fxLayout="row wrap">
-    <div
-      fxFlex="33"
-      fxLayout="row"
-      fxLayoutAlign="center"
-      fxLayoutGap="10px"
-      class="image-list__item"
-      *ngFor="let image of images"
-    >
-      <img src="https://via.placeholder.com/100x100.png" />
-    </div>
-  </div>
+  <app-images-list [images]="images"></app-images-list>
 </app-default-container>

@@ -1,3 +1,4 @@
+import { ImagesListModule } from './../../components/static/images-list/images-list.module';
 import { DefaultContainerModule } from './../../containers/default-container/default-container.module';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
@@ -13,6 +14,7 @@ import { FlexLayoutModule } from '@angular/flex-layout';
     HomeRoutingModule,
     DefaultContainerModule,
     FlexLayoutModule,
+    ImagesListModule,
   ],
 })
 export class HomeModule {}
