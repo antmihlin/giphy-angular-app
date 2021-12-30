@@ -1,0 +1,12 @@
+<ng-container *ngIf="themes">
+  <button mat-button [matMenuTriggerFor]="menu">
+    <mat-icon>format_color_fill</mat-icon>
+  </button>
+  <mat-menu #menu="matMenu">
+    <ng-container *ngFor="let theme of themes">
+      <button mat-menu-item (click)="setTheme(theme.value)">
+        {{ theme.value }}
+      </button>
+    </ng-container>
+  </mat-menu>
+</ng-container>

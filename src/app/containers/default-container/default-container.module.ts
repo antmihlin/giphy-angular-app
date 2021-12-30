@@ -1,3 +1,4 @@
+import { ThemesModule } from './../../components/themes/themes.module';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { DefaultContainerComponent } from './default-container/default-container.component';
@@ -15,6 +16,7 @@ import { RouterModule } from '@angular/router';
     MatIconModule,
     MatToolbarModule,
     RouterModule,
+    ThemesModule,
   ],
 })
 export class DefaultContainerModule {}
