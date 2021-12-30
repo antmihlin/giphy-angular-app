@@ -1,3 +1,6 @@
 <app-default-container>
-  <app-images-list [images]="images"></app-images-list>
+  <div fxLayout="column" fxLayoutAlign="stretch">
+    <app-images-search (search)="onSearch($event)"></app-images-search>
+    <app-images-list [images]="images"></app-images-list>
+  </div>
 </app-default-container>

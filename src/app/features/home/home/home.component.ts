@@ -17,4 +17,6 @@ export class HomeComponent {
     { title: 'Test', url: 'fvdfvdf' },
     { title: 'Test', url: 'fvdfvdf' },
   ];
+
+  public onSearch(ev: any) {}
 }
