@@ -1,7 +1,7 @@
 <div *ngIf="image" class="image-list__item">
   <img
-    *ngIf="image?.images?.downsized?.url"
-    [src]="image?.images?.downsized?.url"
+    *ngIf="image?.images?.fixed_height?.url"
+    [src]="image?.images?.fixed_height?.url"
     [alt]="image.title"
   />
 </div>
