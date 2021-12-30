@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, EventEmitter, Output } from '@angular/core';
 import { FormControl } from '@angular/forms';
 import { MatChipInputEvent } from '@angular/material/chips';
 
@@ -8,10 +8,11 @@ import { MatChipInputEvent } from '@angular/material/chips';
   styleUrls: ['./images-search.component.scss'],
 })
 export class ImagesSearchComponent {
+  @Output() search = new EventEmitter<Set<string>>();
   constructor() {}
 
-  keywords = new Set(['angular', 'how-to', 'tutorial']);
-  formControl = new FormControl(['angular']);
+  keywords = new Set(['example tag']);
+  formControl = new FormControl(['example tag']);
 
   addKeywordFromInput(event: MatChipInputEvent) {
     if (event.value) {
@@ -22,5 +23,9 @@ export class ImagesSearchComponent {
 
   removeKeyword(keyword: string) {
     this.keywords.delete(keyword);
+  }
+
+  public searchKeywords(keywords: Set<string>) {
+    this.search.emit(keywords);
   }
 }
