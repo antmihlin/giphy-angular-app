@@ -1,18 +1,22 @@
-<mat-toolbar class="default-toolbar" color="primary">
-  <a
-    class="default-logo"
-    [routerLink]="['/']"
-    routerLinkActive="router-link-active"
-    fxLayout="row"
-    fxLayoutAlign="space-between center"
-  >
-    <mat-icon class="accentColor">air</mat-icon>
-    <span class="accentColor"> Anton M.</span>
-  </a>
-</mat-toolbar>
+<div fxLayout="column">
+  <mat-toolbar class="default-toolbar" color="primary" fxFlex="60px">
+    <a
+      class="default-logo"
+      [routerLink]="['/']"
+      routerLinkActive="router-link-active"
+      fxLayout="row"
+      fxLayoutAlign="space-between center"
+    >
+      <mat-icon class="accentColor">air</mat-icon>
+      <span class="accentColor"> Anton M.</span>
+    </a>
+  </mat-toolbar>
 
-<div class="page-container" fxLayout="row" fxLayoutAlign="center">
-  <div class="page-content">
-    <ng-content></ng-content>
+  <div class="page-container" fxLayout="column">
+    <div fxLayout="row" fxLayoutAlign="center">
+      <div class="page-content">
+        <ng-content></ng-content>
+      </div>
+    </div>
   </div>
 </div>
