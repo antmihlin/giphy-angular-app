@@ -11,8 +11,10 @@ import { Component, OnDestroy } from '@angular/core';
 export class HomeComponent implements OnDestroy {
   public offset = 0;
   public limit = 9;
+  public keywords: string;
   public loading = false;
   public images: any;
+  public totalCount: number = 0;
 
   private subscriptions: Subscription[] = [];
 
@@ -24,8 +26,10 @@ export class HomeComponent implements OnDestroy {
 
   public onSearch(ev: Set<string>) {
     this.loading = true;
+    this.keywords = [...ev].join(',');
+
     const query: GiphyQuery = {
-      q: [...ev].join(','),
+      q: this.keywords,
       offset: this.offset,
       limit: this.limit,
     };
@@ -34,6 +38,8 @@ export class HomeComponent implements OnDestroy {
         (res: any) => {
           if (res?.data) {
             this.images = res.data;
+            this.totalCount = res?.pagination?.total_count;
+            this.offset += this.limit;
           }
         },
         (err) => {},
@@ -44,7 +50,27 @@ export class HomeComponent implements OnDestroy {
     );
   }
 
-  public getMore() {
+  public loadMore() {
     this.loading = true;
+
+    const query: GiphyQuery = {
+      q: this.keywords,
+      offset: this.offset,
+      limit: this.limit,
+    };
+    this.subscriptions.push(
+      this.giphyService.search(query).subscribe(
+        (res: any) => {
+          if (res?.data) {
+            this.images = [...this.images, ...res.data];
+            this.offset += this.limit;
+          }
+        },
+        (err) => {},
+        () => {
+          this.loading = false;
+        }
+      )
+    );
   }
 }

@@ -1,13 +1,36 @@
 <app-default-container>
   <div fxLayout="column" fxLayoutAlign="stretch">
     <app-images-search (search)="onSearch($event)"></app-images-search>
-    <app-images-list *ngIf="!loading" [images]="images"></app-images-list>
-    <mat-progress-spinner
+    <app-images-list *ngIf="images" [images]="images"></app-images-list>
+    <div fxLayout="row" fxLayoutAlign="center center">
+      <button
+        mat-raised-button
+        color="accent"
+        type="button"
+        *ngIf="totalCount > offset"
+        (click)="loadMore()"
+      >
+        Load more
+      </button>
+    </div>
+    <ng-container *ngIf="!images">
+      <h3>Insert keywords and start searching</h3>
+    </ng-container>
+
+    <div
       *ngIf="loading"
-      [color]="'primary'"
-      [mode]="'indeterminate'"
-      [value]="'50'"
+      class="loading-spinner-container"
+      fxLayout="column"
+      fxLayoutAlign="center center"
     >
-    </mat-progress-spinner>
+      <div class="loading-spinner">
+        <mat-progress-spinner
+          [color]="'primary'"
+          [mode]="'indeterminate'"
+          [value]="'50'"
+        >
+        </mat-progress-spinner>
+      </div>
+    </div>
   </div>
 </app-default-container>
