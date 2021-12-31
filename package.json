@@ -63,7 +63,7 @@
     "*.{js,json,css,scss,md,ts,html}": [
       "prettier --write"
     ],
-    "*.{js,css,scss,md,ts,html}": [
+    "*.{js,css,scss,ts,html}": [
       "eslint --fix"
     ]
   }
